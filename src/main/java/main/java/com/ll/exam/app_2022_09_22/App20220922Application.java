@@ -3,9 +3,10 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableBatchProcessing
 @SpringBootApplication
+@EnableJpaAuditing
 public class App20220922Application {
     public static void main(String[] args) {
         SpringApplication.run(App20220922Application.class, args);
