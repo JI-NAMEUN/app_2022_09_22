@@ -10,6 +10,8 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
+import java.time.LocalDateTime;
+
 import static javax.persistence.FetchType.LAZY;
 
 @Entity
@@ -52,6 +54,8 @@ public class RebateOrderItem extends BaseEntity {
     private String productOptionSize;
     private String productOptionDisplayColor;
     private String productOptionDisplaySize;
+    // 주문품목
+    private LocalDateTime orderItemCreateDate;
     public RebateOrderItem(OrderItem orderItem) {
         this.orderItem = orderItem;
         order = orderItem.getOrder();
@@ -73,5 +77,9 @@ public class RebateOrderItem extends BaseEntity {
         productOptionSize = orderItem.getProductOption().getSize();
         productOptionDisplayColor = orderItem.getProductOption().getDisplayColor();
         productOptionDisplaySize = orderItem.getProductOption().getDisplaySize();
+
+
+        // 주문품목 추가데이터
+        orderItemCreateDate = orderItem.getCreateDate();
     }
 }
