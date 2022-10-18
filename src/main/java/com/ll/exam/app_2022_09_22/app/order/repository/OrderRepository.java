@@ -4,4 +4,5 @@ import com.ll.exam.app_2022_09_22.app.order.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
+    Page<OrderItem> findAllByIsPaid(boolean isPaid, Pageable pageable);
 }
