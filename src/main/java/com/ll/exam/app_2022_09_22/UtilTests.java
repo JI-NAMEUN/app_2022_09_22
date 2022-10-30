@@ -3,12 +3,7 @@ package com.ll.exam.app_2022_09_22;
 import com.ll.exam.app_2022_09_22.util.Util;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 public class UtilTests {
     @Test
     @DisplayName("특정월에 마지막날을 계산")
@@ -25,7 +20,7 @@ public class UtilTests {
     @Test
     @DisplayName("문자열로 LocalDateTime 객체 만들기")
     void t2() {
-        LocalDateTime localDateTime1 = Util.date.parse("yyyy-MM-dd HH:mm:ss.SSSSSS", "2022-09-01 23:59:59.999999");
+        LocalDateTime localDateTime1 = Util.date.parse("2022-09-01 23:59:59.999999");
         assertThat(localDateTime1.toString().length()).isEqualTo(26);
 
         LocalDateTime localDateTime2 = Util.date.parse("yyyy-MM-dd HH:mm:ss", "2022-09-01 23:59:59");
